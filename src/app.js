@@ -1,6 +1,5 @@
 import 'jquery';
 import 'bootstrap';
-import 'holderjs';
 
 import Vue from 'vue';
 import router from './router';

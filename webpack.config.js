@@ -5,6 +5,7 @@ const url = require('url');
 const defaults = require('lodash.defaults');
 const pick = require('lodash.pick');
 const packageJson = require('./package.json');
+const boolean = require('boolean');
 
 const env = process.env;
 
@@ -14,11 +15,11 @@ const NODE_ENV = 'development';
 const CWD = __dirname;
 const PUBLIC_DIR = path.join(CWD, 'dist');
 const BUILD_DIR = path.join(PUBLIC_DIR, 'build');
-const PUBLIC_PATH = '';
+const PUBLIC_PATH = boolean(process.env.GH_PAGES) ? `/${packageJson.name}` : '';
 const BUILD_PATH = `${env.PUBLIC_PATH || PUBLIC_PATH}/build/`;
 const WDS_BASE_DIR = env.PUBLIC_DIR || PUBLIC_DIR;
-const WDS_HOST = url.parse(env.APP_ORIGIN).hostname;
-const WDS_PORT = url.parse(env.APP_ORIGIN).port;
+const WDS_HOST = url.parse(env.APP_ORIGIN || APP_ORIGIN).hostname;
+const WDS_PORT = url.parse(env.APP_ORIGIN || APP_ORIGIN).port;
 
 const envDefaults = {
     APP_ORIGIN,
