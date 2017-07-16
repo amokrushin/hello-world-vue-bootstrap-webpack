@@ -1,0 +1,14 @@
+!.gitkeep
+
+logs/*
+*.log
+npm-debug.log*
+
+coverage
+lib-cov
+
+node_modules
+
+.env
+
+dist/*

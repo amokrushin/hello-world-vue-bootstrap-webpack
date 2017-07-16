@@ -1,0 +1,22 @@
+{
+  "presets": [
+    "es2015",
+    "es2016",
+    "stage-0"
+  ],
+  "plugins": [
+    "lodash",
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "unit": {
+      "presets": [
+        "es2016"
+      ],
+      "plugins": [
+        "lodash",
+        "transform-object-rest-spread"
+      ]
+    }
+  }
+}
